@@ -1,3 +1,3 @@
-module github.com/meta1203/metalib/concurrency
+module github.com/meta1203/metalib/concurrent
 
 go 1.15
