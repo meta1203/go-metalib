@@ -14,25 +14,25 @@ func CreateLock() *sync.Mutex {
 	return &sync.Mutex{}
 }
 
-type waitGroup struct {
+type WaitGroup struct {
 	wg sync.WaitGroup
 }
 
-func NewWaitGroup() *waitGroup {
+func NewWaitGroup() *WaitGroup {
 	ret := WaitGroup{}
 	ret.wg.Add(1)
 	return &ret
 }
 
-func (waitGroup *waitGroup) Start() {
-	waitGroup.wg.Add(1)
+func (WaitGroup *WaitGroup) Start() {
+	WaitGroup.wg.Add(1)
 }
 
-func (waitGroup *waitGroup) Stop() {
-	waitGroup.wg.Add(1)
+func (WaitGroup *WaitGroup) Stop() {
+	WaitGroup.wg.Add(1)
 }
 
-func (waitGroup *waitGroup) Wait() {
-	waitGroup.wg.Done()
-	waitGroup.wg.Wait()
+func (WaitGroup *WaitGroup) Wait() {
+	WaitGroup.wg.Done()
+	WaitGroup.wg.Wait()
 }
